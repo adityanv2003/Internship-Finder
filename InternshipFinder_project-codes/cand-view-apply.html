@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>View Applications - InternshipFinder</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles1.css">
+    <style>
+        .hero{height: 100vh !important;}
+    </style>
+</head>
+<body>
+
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark-blue">
+    <div class="container">
+        <a class="navbar-brand" href="index1.html" style="font-family: 'Poppins', sans-serif;">InternshipFinder</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+            <ul class="navbar-nav">
+                <li class="nav-item mx-4">
+                    <a class="nav-link" href="candidate-dashboard.html" style="color:white; font-family: 'Poppins', sans-serif;">Dashboard</a>
+                </li>
+                <li class="nav-item mx-4">
+                    <a class="nav-link" href="cand-profile.html" style="color:white; font-family: 'Poppins', sans-serif;">Profile</a>
+                </li>
+                <li class="nav-item mx-4">
+                    <a class="nav-link" href="index1.html" style="color:white; font-family: 'Poppins', sans-serif;">Logout</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<!-- View Applications Page -->
+<div class="hero">     
+<h1 class="text-center">Your Applications</h1>
+<div class="container mt-5">
+    <div class="row" id="application-list">
+        <!-- Application cards will be inserted here -->
+    </div>
+</div>
+</div>
+
+<!-- Footer -->
+<footer class="bg-dark-blue text-white text-center py-3">
+    <p>&copy; 2024 InternshipFinder. All rights reserved.</p>
+</footer>
+
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<script>
+const applications = [
+    { company: "ABC Corp", role: "Software Intern", description: "Work on exciting projects.", duration: "3 months", stipend: "Rs 10000 Monthly" },
+    { company: "XYZ Ltd", role: "Marketing Intern", description: "Assist in marketing campaigns.", duration: "2 months", stipend: "Rs 30000 Monthly" },
+    // Add more applications as needed
+];
+
+const applicationList = document.getElementById('application-list');
+
+applications.forEach((application, index) => {
+    const card = document.createElement('div');
+    card.classList.add('col-md-6');
+    card.innerHTML = `
+        <div class="card mb-4 shadow-sm">
+            <div class="card-body">
+                <h5 class="card-title">${application.company}</h5>
+                <p><strong>Role:</strong> ${application.role}</p>
+                <p><strong>Description:</strong> ${application.description}</p>
+                <p><strong>Duration:</strong> ${application.duration}</p>
+                <p><strong>Stipend:</strong> ${application.stipend}</p>
+                <button class="btn btn-light decline-btn" style="color: rgb(0, 0, 0); background-color: rgb(255, 255, 255); border-color: white;" data-index="${index}">Decline</button>
+            </div>
+        </div>
+    `;
+    applicationList.appendChild(card);
+});
+
+document.querySelectorAll('.decline-btn').forEach(button => {
+    button.addEventListener('click', function() {
+        const index = this.getAttribute('data-index');
+        if (confirm('Are you sure you want to decline this internship?')) {
+            applications.splice(index, 1);
+            this.closest('.col-md-6').remove();
+            // Add logic to handle the decline process, e.g., making an AJAX request
+            alert('You have successfully declined this internship.');
+        }
+    });
+});
+</script>
+</body>
+</html>

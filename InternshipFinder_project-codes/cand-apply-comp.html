@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Apply for Companies - InternshipFinder</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles1.css">
+</head>
+<body>
+
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark-blue">
+    <div class="container">
+        <a class="navbar-brand" href="index1.html" style="font-family: 'Poppins', sans-serif;">InternshipFinder</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+            <ul class="navbar-nav">
+                <li class="nav-item mx-4">
+                    <a class="nav-link" href="candidate-dashboard.html" style="color:white; font-family: 'Poppins', sans-serif;">Dashboard</a>
+                </li>
+                <li class="nav-item mx-4">
+                    <a class="nav-link" href="cand-profile.html" style="color:white; font-family: 'Poppins', sans-serif;">Profile</a>
+                </li>
+                <li class="nav-item mx-4">
+                    <a class="nav-link" href="index1.html" style="color:white; font-family: 'Poppins', sans-serif;">Logout</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<!-- Apply for Companies Page -->
+<div class="hero">     
+<h1 class="text-center">Your Opportunities</h1>
+<div class="container mt-5">
+    <div class="row" id="internship-list">
+        <!-- Internship cards will be inserted here -->
+    </div>
+</div>
+</div>
+
+<!-- Footer -->
+<footer class="bg-dark-blue text-white text-center py-3">
+    <p>&copy; 2024 InternshipFinder. All rights reserved.</p>
+</footer>
+
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<script>
+const internships = [
+    { company: "ABC Corp", role: "Software Intern", description: "Work on exciting projects.", duration: "3 months", stipend: "Rs. 10000 Monthly", applied: false },
+    { company: "XYZ Ltd", role: "Marketing Intern", description: "Assist in marketing campaigns.", duration: "2 months", stipend: "Rs 30000 Monthly", applied: false },
+    // Add more internships as needed
+];
+
+const internshipList = document.getElementById('internship-list');
+
+internships.forEach((internship, index) => {
+    const card = document.createElement('div');
+    card.classList.add('col-md-6');
+    card.innerHTML = `
+        <div class="card mb-4 shadow-sm">
+            <div class="card-body">
+                <h5 class="card-title">${internship.company}</h5>
+                <p><strong>Role:</strong> ${internship.role}</p>
+                <p><strong>Description:</strong> ${internship.description}</p>
+                <p><strong>Duration:</strong> ${internship.duration}</p>
+                <p><strong>Stipend:</strong> ${internship.stipend}</p>
+                <button class="btn btn-light apply-btn" style="color: rgb(0, 0, 0); background-color: rgb(255, 255, 255); border-color: white;" data-index="${index}" ${internship.applied ? 'disabled' : ''}>${internship.applied ? 'Applied' : 'Apply Internship'}</button>
+            </div>
+        </div>
+    `;
+    internshipList.appendChild(card);
+});
+
+document.querySelectorAll('.apply-btn').forEach(button => {
+    button.addEventListener('click', function() {
+        const index = this.getAttribute('data-index');
+        if (confirm('Are you sure you want to apply for this internship?')) {
+            internships[index].applied = true;
+            this.textContent = 'Applied';
+            this.disabled = true;
+            // Add logic to handle the application process, e.g., making an AJAX request
+            alert('You have successfully applied for this internship.');
+        }
+    });
+});
+</script>
+</body>
+</html>

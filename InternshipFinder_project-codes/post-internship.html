@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Post Internship - InternshipFinder</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles1.css">
+</head>
+<body>
+
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark-blue">
+    <div class="container">
+        <a class="navbar-brand" href="index1.html" style="font-family: 'Poppins', sans-serif;">InternshipFinder</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+            <ul class="navbar-nav">
+                <li class="nav-item mx-4">
+                    <a class="nav-link" href="employer-dashboard.html" style="color:white; font-family: 'Poppins', sans-serif;">Dashboard</a>
+                </li>
+                <li class="nav-item mx-4">
+                    <a class="nav-link" href="profile.html" style="color:white; font-family: 'Poppins', sans-serif;">Profile</a>
+                </li>
+                <li class="nav-item mx-4">
+                    <a class="nav-link" href="index1.html" style="color:white; font-family: 'Poppins', sans-serif;">Logout</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<!-- Post Internship Page -->
+<header class="hero">
+    <h2 class="text-center">Post Internship</h2>
+    <div class="container mt-5">
+        <div class="col-lg-6 offset-lg-3">
+            <form id="postInternshipForm">
+                <div class="form-group">
+                    <label for="companyName">Company Name</label>
+                    <input type="text" class="form-control" id="companyName" placeholder="Enter company name" required>
+                </div>
+                <div class="form-group">
+                    <label for="jobRole">Job Role</label>
+                    <input type="text" class="form-control" id="jobRole" placeholder="Enter job role" required>
+                </div>
+                <div class="form-group">
+                    <label for="jobDescription">Job Description</label>
+                    <textarea class="form-control" id="jobDescription" rows="5" placeholder="Enter job description" required></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="duration">Duration</label>
+                    <input type="text" class="form-control" id="duration" placeholder="Enter duration" required>
+                </div>
+                <div class="form-group">
+                    <label for="stipend">Stipend</label>
+                    <input type="text" class="form-control" id="stipend" placeholder="Enter stipend" required>
+                </div>
+                <div class="form-group">
+                    <label for="lastDateToApply">Last Date to Apply</label>
+                    <input type="date" class="form-control" id="lastDateToApply" required>
+                </div>
+                <button type="submit" class="btn btn-primary" style="border-width: 0px;">Post Internship</button>
+            </form>
+        </div>
+    </div>
+</header>
+
+<!-- Footer -->
+<footer class="bg-dark-blue text-white text-center py-3">
+    <p>&copy; 2024 InternshipFinder. All rights reserved.</p>
+</footer>
+
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<script>
+    document.getElementById('postInternshipForm').addEventListener('submit', function(event) {
+        event.preventDefault();
+        alert('Internship posted successfully.');
+        // Here you can add your logic to post the internship to your backend
+        window.location.href = 'employer-dashboard.html';
+    });
+</script>
+</body>
+</html>

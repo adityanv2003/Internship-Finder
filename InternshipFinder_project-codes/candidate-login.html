@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Candidate Login - InternshipFinder</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles1.css">
+</head>
+<body>
+
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark-blue">
+    <div class="container">
+        <a class="navbar-brand" href="index1.html" style="font-family: 'Poppins', sans-serif;">InternshipFinder</a>
+    </div>
+</nav>
+
+<!-- Candidate Login Form -->
+<header class="hero">
+<h2 class="text-center">Candidate Login</h2>
+<section class="py-5">
+    <div class="container"> 
+        <div class="row">
+            <div class="col-lg-6 offset-lg-3">
+                <form id="candidateLoginForm">
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" class="form-control" id="email" placeholder="Enter your email">
+                    </div>
+                    <div class="form-group">
+                        <label for="password">Password</label>
+                        <input type="password" class="form-control" id="password" placeholder="Enter your password">
+                    </div>
+                    <button type="submit" id="btnss" class="btn btn-outline-light btn-block">Login</button>
+                    <div class="text-center mt-3">
+                        <a href="forgot-pw.html" class="text-light">Forgot Password?</a>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+</header>
+
+<!-- Footer -->
+<footer class="bg-dark-blue text-white text-center py-3">
+    <p>&copy; 2024 InternshipFinder. All rights reserved.</p>
+</footer>
+
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+<script>
+document.getElementById('candidateLoginForm').addEventListener('submit', function(event) {
+    event.preventDefault(); // Prevent form submission
+    
+    // Get form values
+    var email = document.getElementById('email').value.trim();
+    var password = document.getElementById('password').value.trim();
+
+    // Check if fields are empty
+    if (email === '' || password === '') {
+        alert('All fields are mandatory');
+        return;
+    }
+
+    // Check email format
+    var emailPattern = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/;
+    if (!emailPattern.test(email)) {
+        alert('Invalid email format');
+        return;
+    }
+
+    // If all checks pass
+    alert('Success');
+    this.submit(); // Submit the form
+});
+</script>
+</body>
+</html>

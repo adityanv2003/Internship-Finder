@@ -1,0 +1,115 @@
+/* General Styles */
+
+body {
+    font-family: Poppins, sans-serif;
+    color: #ffffff;
+}
+
+/* Dark Blue Color */
+.bg-dark-blue {
+    background-color: #000000 !important;
+}
+
+/* Gradient Background for Hero Section */
+.hero {
+    padding: 100px 0;
+    background: linear-gradient(to bottom, #002244, #2f5174);
+}
+
+.hero1 {
+    padding: 100px 0;
+    background-color: #2f5174;
+}
+
+.hero .display-4 {
+    font-weight: 700;
+    margin-bottom: 20px;
+}
+
+.hero .lead {
+    font-size: 1.25rem;
+    margin-bottom: 30px;
+}
+
+/* Navbar */
+.navbar-nav .nav-link {
+    font-size: 1.1rem;
+    font-weight: 500;   
+    color:#ffffff;
+}
+
+.nav-item.mx-4 {
+    margin: 0 2rem; /* Increased spacing between navbar items */
+}
+
+#dropdown-id{
+    background-color: black;
+    color: #4779ac;
+    border-radius: 10px;
+}
+
+/* About & Features Section */
+#about-features {
+    background: linear-gradient(to bottom, #4779ac, #304d6b);
+}
+
+#about-features img {
+    border-radius: 10px;
+}
+@import "bootstrap";
+.btn-primary, .btn-primary:hover, .btn-primary:active, .btn-primary:visited {
+    background-color: #000000 !important;
+}
+
+.card {
+    border-width:0.5px;
+    border-color: #ffffff;
+    border-radius: 10px;
+
+    transition: transform 0.3s;
+    background:transparent;
+    
+}
+
+.card:hover {
+    transform: translateY(-10px);
+}
+
+/* Text Colors for Features Section */
+.card-title{
+    color: #ffffff !important;
+}
+
+.card-para {
+    color: #ffffff !important;
+    font-family: Verdana, Tahoma, sans-serif;
+}
+
+/* Contact Section */
+#contact {
+    background: linear-gradient(to bottom, #507397,#002244);
+}
+
+#contact form .form-control {
+    border-radius: 10px;    
+}
+
+#contact form button {
+    border-radius: 10px;
+    border-width: 0.5px;
+    border-color: white;
+}
+
+#btnss {
+    background-color: transparent !important;
+}
+
+header {
+    position: relative;
+    width: 100%;
+    min-height: auto;
+}
+
+.mild-blue{
+    color: aqua !important;
+}

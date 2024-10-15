@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Candidate Profile - InternshipFinder</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles1.css">
+</head>
+<body>
+
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark-blue">
+    <div class="container">
+        <a class="navbar-brand" href="index1.html" style="font-family: 'Poppins', sans-serif;">InternshipFinder</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+            <ul class="navbar-nav">
+                <li class="nav-item mx-4">
+                    <a class="nav-link" href="candidate-dashboard.html" style="color:white; font-family: 'Poppins', sans-serif;">Dashboard</a>
+                </li>
+                <li class="nav-item mx-4">
+                    <a class="nav-link" href="cand-profile.html" style="color:white; font-family: 'Poppins', sans-serif;">Profile</a>
+                </li>
+                <li class="nav-item mx-4">
+                    <a class="nav-link" href="index1.html" style="color:white; font-family: 'Poppins', sans-serif;">Logout</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<!-- Profile Page -->
+<header class="hero">
+    <h2 class="text-center">Your Profile</h2>
+    <div class="container mt-5">
+        <div class="col-lg-8 offset-lg-2">
+            <div class="card mb-4 shadow-sm">
+                <div class="card-body">
+                    <h4 class="card-title">Personal Details</h4>
+                    <p><strong>Name:</strong> Jane Doe</p>
+                    <p><strong>Phone Number:</strong> +1234567890</p>
+                    <p><strong>Email ID:</strong> janedoe@example.com</p>
+                    <h4 class="card-title">Educational Details</h4>
+                    <p><strong>Institution:</strong> XYZ University</p>
+                    <p><strong>Course:</strong> Computer Science</p>
+                    <p><strong>Year:</strong> 3rd Year</p>
+                    <h4 class="card-title">Resume</h4>
+                    <p><a href="resume.pdf" target="_blank" style="color: rgb(174, 200, 223);">View Resume</a></p>
+                    <div class="d-flex justify-content-between mt-4">
+                        <a href="cand-profile-update.html" class="btn btn-primary" style="border-width: 0px;">Update Profile</a>
+                        <button id="deleteProfileBtn" class="btn btn-danger" style="border-width: 0px;">Delete Profile</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+<!-- Footer -->
+<footer class="bg-dark-blue text-white text-center py-3">
+    <p>&copy; 2024 InternshipFinder. All rights reserved.</p>
+</footer>
+
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<script>
+document.getElementById('deleteProfileBtn').addEventListener('click', function() {
+    if (confirm('Are you sure you want to delete your profile? This action cannot be undone.')) {
+        // Add your delete profile logic here, for example, making an AJAX request to delete the profile.
+        alert('Profile deleted successfully.');
+        // Redirect to the home page or login page after deletion
+        window.location.href = 'index1.html';
+    }
+});
+</script>
+</body>
+</html>
